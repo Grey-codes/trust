@@ -83,7 +83,7 @@ $totalPages = ceil($totalRecords / $limit);
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>ID</th><th>Volunteer Id</th><th>Name</th><th>Village</th><th>Mandal</th><th>Phone</th><th>Status</th><th>Edit</th><?php if($_SESSION['aId']){  ?>   <th>Delete</th>  <?php } ?>
+              <th>ID</th><th>Volunteer Id</th><th>Name</th><th>Village</th><th>Mandal</th><th>Phone</th><th>Status</th><th>Edit</th><?php if(!empty($_SESSION['aId'])){  ?>   <th>Delete</th>  <?php } ?>
           </tr>
             </tr>
           </thead>
@@ -104,7 +104,7 @@ $totalPages = ceil($totalRecords / $limit);
                 ?>
               </td>
               <td><a href="widow-details.php?id=<?= $j['id'] ?>&type=1" class="btn btn-outline-dark">Edit</a></td>
-            <?php if($_SESSION['aId']){ ?>
+            <?php if(!empty($_SESSION['aId'])){ ?>
               <td>
                 <a href="../../api/delete.php?id=<?= $j['id'] ?>&type=4&admin=<?= $isAdmin ? 2 : 1 ?>" class="btn btn-outline-danger">🗑</a>
               </td>

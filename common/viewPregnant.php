@@ -123,7 +123,7 @@ $totalPages = ceil($totalRows / $limit);
             <th>Phone</th>
             <th>Status</th>
             <th>Edit</th>
-       <?php if($_SESSION['aId']){  ?>   <th>Delete</th>  <?php } ?>
+       <?php if(isset($_SESSION['aId'])){  ?>   <th>Delete</th>  <?php } ?>
           </tr>
           </tr>
         </thead>
@@ -146,7 +146,7 @@ $totalPages = ceil($totalRows / $limit);
             </td>
             <td><a href="pregnant-details.php?id=<?= $j['id'] ?>" class="btn btn-outline-dark btn-sm">Edit</a></td>
             <td>
-              <?php if($_SESSION['aId']){ ?>
+              <?php if(isset($_SESSION['aId'])){ ?>
               <?php $admin = isset($_SESSION['aId']) ? 2 : 1; ?>
               <a href="../../api/delete.php?id=<?= $j['id'] ?>&type=2&admin=2" class="btn btn-outline-danger btn-sm">Delete</a>
             </td>

@@ -69,7 +69,7 @@ if (isset($_SESSION['aId'])) {
   <h3 class="mb-0">List</h3>
 
   <div class="d-flex flex-wrap gap-2">
-    <?php if ($_SESSION['aId']) { ?>
+    <?php if (!empty($_SESSION['aId'])) { ?>
       <form method="GET" action="" class="d-flex align-items-center gap-2">
         <input 
           id="adminSearchInput" 
@@ -151,7 +151,7 @@ $totalPages = ceil($totalRows / $limit);
       <tr>
         <th>ID</th>
         <th>V ID</th>
-        <?php if ($_SESSION['aId']) { ?><th>Admin ID</th><?php } ?>
+        <?php if (!isset($_SESSION['aId'])) { ?><th>Admin ID</th><?php } ?>
         <th>Child Name</th>
         <th>DOB</th>
         <th>Class</th>
@@ -160,7 +160,7 @@ $totalPages = ceil($totalRows / $limit);
          <th>Village</th>
         <th>Status</th>
         <th>Edit</th>
-        <?php if ($_SESSION['aId']) { ?><th>Delete</th><?php } ?>
+        <?php if (isset($_SESSION['aId'])) { ?><th>Delete</th><?php } ?>
       </tr>
     </thead>
     <tbody id="studentTable">
@@ -168,7 +168,7 @@ $totalPages = ceil($totalRows / $limit);
         <tr>
           <td>CH-<?php echo $j['id']; ?></td>
           <td><?php echo $j['refer']; ?></td>
-          <?php if ($_SESSION['aId']) { ?>
+          <?php if (!isset($_SESSION['aId']) ){ ?>
             <td><?php echo $j['sub_refer']; ?></td>
           <?php } ?>
           <td><?php echo $j['Student_Full_Name']; ?></td>
@@ -197,7 +197,7 @@ $totalPages = ceil($totalRows / $limit);
           <td>
             <a href="student-details.php?id=<?php echo $j['id']; ?>" class="btn btn-sm btn-outline-dark">Edit</a>
           </td>
-          <?php if ($_SESSION['aId']) { ?>
+          <?php if (isset($_SESSION['aId'])) { ?>
             <td>
               <a href="../../api/delete.php?id=<?php echo $j['id']; ?>&type=1&admin=2"
                 class="btn btn-sm btn-outline-danger"

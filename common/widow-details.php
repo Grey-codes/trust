@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-// include '../config.php';
 
 if (isset($_GET['id'])) {
     $student_id = $_GET['id'];
@@ -113,15 +112,16 @@ if (isset($_GET['id'])) {
         ?>
         </center>
     </div>
-    <div id="photo-container">
+
+    <div class="position-relative">
+        <div id="student-details">
+                <div id="photo-container">
         <img src="<?php echo '/trust/api/widow/' . $student['photo']; ?>" style="height:120px; width:120px; border-radius:10%; border:2px solid #555;">
     </div>
-    
-    <div class="position-relative">
     <div class="row">
         
         
-        <div id="student-details">
+    
             <?php
             $i = 1;
            

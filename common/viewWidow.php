@@ -98,7 +98,7 @@ if (isset($_SESSION['aId'])) {
               <th>Phone</th>
               <th>Status</th>
               <th>Edit</th>
-              <?php if($_SESSION['aId']){  ?>   <th>Delete</th>  <?php } ?>
+              <?php if(!empty($_SESSION['aId'])){  ?>   <th>Delete</th>  <?php } ?>
           </tr>
             </tr>
           </thead>
@@ -149,7 +149,7 @@ while ($j = mysqli_fetch_array($sl_id)) {
     <?php endif; ?>
   </td>
   <td><a href="widow-details.php?id=<?php echo $j['id']; ?>&type=0" class="btn btn-outline-dark btn-sm">Edit</a></td>
-  <?php if($_SESSION['aId']){ ?>
+  <?php if(!empty($_SESSION['aId'])){ ?>
   <td><a href="../../api/delete.php?id=<?php echo $j['id']; ?>&type=3&admin=<?php echo isset($_SESSION['aId']) ? '2' : '1'; ?>" class="btn btn-outline-danger btn-sm">🗑</a></td>
 <?php } ?>
 </tr>
