@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
             $update->close();
         }
 
-        header("Location: ../trustsub/sub/ViewBorewell.php");
+        header("Location: ../trustsub/sub/viewBorewell.php");
         exit;
     }
 } else {
