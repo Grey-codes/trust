@@ -83,10 +83,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
             $update->execute();
             $update->close();
         }
-
-        header("Location: ../trustsub/sub/viewBorewell.php");
+if(isset($_SESSION['aId'])){
+        header("Location: ../trustadmin/admin/viewBorewell.php");
         exit;
     }
+    else{
+            header("Location: ../trustsub/sub/viewBorewell.php");
+        exit;
+    }
+}
 } else {
     echo "Invalid Request.";
 }
